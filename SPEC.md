@@ -77,10 +77,15 @@ No authentication. `/admin` is obscurity-protected — personal tool.
 Constructed at render time from ID field. No manual image URL entry.
 
 ```
-Set:     https://img.bricklink.com/ItemImage/SL/{id}.png
+Set:     https://img.bricklink.com/ItemImage/SL/{id}-1.png
 Minifig: https://img.bricklink.com/ItemImage/MN/0/{id}.png
 Part:    https://img.bricklink.com/ItemImage/PN/{color_id}/{part_id}.png
 ```
+
+Set images need the `-1` variant suffix — BrickLink stores set images by
+variant, and `-1` is the canonical first release. `lib/bricklink.js`
+auto-appends `-1` when the stored id has no dash, so dad can keep typing
+bare set numbers (`75192`) in admin.
 
 Fallback: if image 404s, show a LEGO brick placeholder SVG.
 
