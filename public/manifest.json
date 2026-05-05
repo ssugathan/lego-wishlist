@@ -1,0 +1,11 @@
+{
+  "name": "LEGO Wishlist",
+  "short_name": "My LEGO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#e3000b",
+  "icons": [
+    { "src": "/icon-lego.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}
