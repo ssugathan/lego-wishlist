@@ -12,12 +12,11 @@
 //     reflected without re-fetching.
 //   - Tweaks panel from the prototype is intentionally dropped — it was a
 //     design-tool affordance, not a production feature. Accent color is
-//     locked to LEGO red, which is also the SPEC's primary color.
+//     locked to LEGO blue per design v2.
 //
 // Caveat from the design chat (still open): the kid's name is hardcoded as
-// "Leo" in the greeting and avatar. Per design handoff: "let me know the
-// real name and I'll wire it up". Update KID_NAME / KID_INITIAL below when
-// known.
+// "Leo" in the greeting. Per design handoff: "let me know the real name and
+// I'll wire it up". Update KID_NAME below when known.
 
 import { useEffect, useMemo, useState } from 'react';
 import { useWishlist } from '../hooks/useWishlist.js';
@@ -26,9 +25,8 @@ import TierTab from '../kid/TierTab.jsx';
 import DetailModal from '../kid/DetailModal.jsx';
 import { shade } from '../kid/util.jsx';
 
-const ACCENT = '#e3000b'; // LEGO red — design's default tab accent
+const ACCENT = '#006cb7'; // LEGO blue — per design v2
 const KID_NAME = 'Leo';
-const KID_INITIAL = 'L';
 
 export default function KidView() {
   const [tab, setTab] = useState('monthly');
@@ -219,15 +217,6 @@ function Header({ accent, title, subtitle }) {
           }}>{subtitle}</div>
         </div>
       </div>
-
-      <div style={{
-        width: 56, height: 56, borderRadius: '50%',
-        background: '#ffcf00',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontFamily: 'Fredoka, system-ui', fontWeight: 700, fontSize: 24,
-        color: '#1a1a1a',
-        boxShadow: '0 4px 0 #b8930a',
-      }}>{KID_INITIAL}</div>
     </div>
   );
 }
