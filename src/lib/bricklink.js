@@ -1,10 +1,16 @@
 // BrickLink image URL construction.
 //
-// URL patterns are taken verbatim from SPEC.md. The kid view is responsible
-// for swapping in PLACEHOLDER_SVG via an onError handler if any of these 404
-// (e.g. set with no BrickLink image yet, typo'd ID, etc).
+// URL patterns mostly follow SPEC.md, with one correction: BrickLink set
+// images require the `-1` variant suffix (`/SL/75192-1.png` returns 200,
+// `/SL/75192.png` 404s). Dad will normally type bare set numbers in admin,
+// so we auto-append `-1` for sets when the id has no dash. Same convention
+// as the Rebrickable wrapper.
 
 const BASE = 'https://img.bricklink.com/ItemImage';
+
+function setIdWithVariant(id) {
+  return id.includes('-') ? id : `${id}-1`;
+}
 
 // Default part color = 0 ("not applicable"), matches SPEC.md's minifig URL.
 // Callers can pass a real BrickLink color id when they have one.
@@ -13,7 +19,7 @@ export function bricklinkImageUrl(type, id, { colorId = 0 } = {}) {
   const cleanId = String(id).trim();
   switch (type) {
     case 'Set':
-      return `${BASE}/SL/${cleanId}.png`;
+      return `${BASE}/SL/${setIdWithVariant(cleanId)}.png`;
     case 'Minifig':
       return `${BASE}/MN/0/${cleanId}.png`;
     case 'Part':
