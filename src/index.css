@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+/* Kid view animations + scrollbar styling — scoped via the kid root's class
+   so admin view keeps Tailwind defaults. */
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.kid-root {
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+.kid-root ::-webkit-scrollbar { width: 8px; height: 8px; }
+.kid-root ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+.kid-root ::-webkit-scrollbar-track { background: transparent; }
