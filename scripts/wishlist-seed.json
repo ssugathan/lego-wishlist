@@ -1,0 +1,67 @@
+[
+  {
+    "productNumber": "75427",
+    "name": "SMART Play: Throne Room Duel & A-Wing",
+    "theme": "Star Wars",
+    "pieces": 962,
+    "msrp": 159.99,
+    "budgetTier": "Occasion",
+    "imageUrl": "https://www.lego.com/cdn/cs/set/assets/bltf279b650862f34ce/75427_Prod.png",
+    "buyUrl": "https://www.lego.com/en-us/product/smart-play-throne-room-duel-a-wing-75427",
+    "onSale": false,
+    "rank": 1,
+    "status": "Wishlist"
+  },
+  {
+    "productNumber": "76343",
+    "name": "Epic Battle: Hulkbuster vs. The Hulk",
+    "theme": "Marvel",
+    "pieces": 413,
+    "msrp": 49.99,
+    "budgetTier": "Occasion",
+    "imageUrl": "https://www.lego.com/cdn/cs/set/assets/blt0cd25e92e7f9ad5c/76343_Prod_en-gb.png",
+    "buyUrl": "https://www.lego.com/en-us/product/epic-battle-hulkbuster-vs-the-hulk-76343",
+    "onSale": false,
+    "rank": 2,
+    "status": "Wishlist"
+  },
+  {
+    "productNumber": "31378",
+    "name": "Space Exploration Telescope",
+    "theme": "Creator",
+    "pieces": 278,
+    "msrp": 34.99,
+    "budgetTier": "Monthly",
+    "imageUrl": "https://www.lego.com/cdn/cs/set/assets/blt71fe323b45263a78/31378_Prod_en-gb.png",
+    "buyUrl": "https://www.lego.com/en-us/product/space-exploration-telescope-31378",
+    "onSale": false,
+    "rank": 1,
+    "status": "Wishlist"
+  },
+  {
+    "productNumber": "31385",
+    "name": "Sea Animals: Beautiful Dolphins",
+    "theme": "Creator",
+    "pieces": 542,
+    "msrp": 49.99,
+    "budgetTier": "Occasion",
+    "imageUrl": "https://www.lego.com/cdn/cs/set/assets/bltbf6cbcbb8ff1610b/31385_Prod_en-gb.png",
+    "buyUrl": "https://www.lego.com/en-us/product/sea-animals-beautiful-dolphins-31385",
+    "onSale": false,
+    "rank": 3,
+    "status": "Wishlist"
+  },
+  {
+    "productNumber": "31381",
+    "name": "Fierce Shark with a Treasure Chest",
+    "theme": "Creator",
+    "pieces": 379,
+    "msrp": 34.99,
+    "budgetTier": "Monthly",
+    "imageUrl": "https://www.lego.com/cdn/cs/set/assets/blt360959af12fb5bfc/31381_Prod_en-gb.png",
+    "buyUrl": "https://www.lego.com/en-us/product/fierce-shark-with-a-treasure-chest-31381",
+    "onSale": false,
+    "rank": 2,
+    "status": "Wishlist"
+  }
+]

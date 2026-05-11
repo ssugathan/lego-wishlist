@@ -1,0 +1,77 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Toy brick icon">
+  <defs>
+    <!-- Brick body shading: warm highlight top-left, deeper red bottom-right -->
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#ff2a33"/>
+      <stop offset="0.55" stop-color="#e3000b"/>
+      <stop offset="1"   stop-color="#b50008"/>
+    </linearGradient>
+
+    <!-- Stud top: bright dome highlight -->
+    <radialGradient id="studTop" cx="0.38" cy="0.34" r="0.85">
+      <stop offset="0"    stop-color="#ff6168"/>
+      <stop offset="0.35" stop-color="#ec1219"/>
+      <stop offset="1"    stop-color="#a90007"/>
+    </radialGradient>
+
+    <!-- Soft inner shadow under each stud, on the brick top -->
+    <radialGradient id="studShadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.7" stop-color="#000" stop-opacity="0.0"/>
+      <stop offset="0.95" stop-color="#000" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle top edge highlight on the brick -->
+    <linearGradient id="topEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="0.25" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- White background -->
+  <rect width="512" height="512" fill="#ffffff"/>
+
+  <!-- Brick body: rounded square, 2x2 stud format, viewed top-down.
+       Body inset gives generous safe-area for masked PWA icons. -->
+  <g>
+    <!-- Soft contact shadow on the white surface -->
+    <ellipse cx="256" cy="438" rx="180" ry="14" fill="#000" opacity="0.08"/>
+
+    <!-- Brick top surface -->
+    <rect x="76" y="76" width="360" height="360" rx="30" ry="30" fill="url(#bodyGrad)"/>
+    <!-- Top-edge highlight -->
+    <rect x="76" y="76" width="360" height="360" rx="30" ry="30" fill="url(#topEdge)"/>
+
+    <!-- Inset border to give a hint of plastic thickness -->
+    <rect x="76" y="76" width="360" height="360" rx="30" ry="30"
+          fill="none" stroke="#7a0006" stroke-opacity="0.35" stroke-width="2"/>
+
+    <!-- Studs: 2x2 grid. Each stud = shadow ring + body disc + dome highlight + tiny specular dot -->
+    <!-- Stud centers: (176,176) (336,176) (176,336) (336,336)  radius ~62 -->
+    <g id="studs">
+      <!-- shadow rings (subtle) -->
+      <circle cx="176" cy="176" r="74" fill="url(#studShadow)"/>
+      <circle cx="336" cy="176" r="74" fill="url(#studShadow)"/>
+      <circle cx="176" cy="336" r="74" fill="url(#studShadow)"/>
+      <circle cx="336" cy="336" r="74" fill="url(#studShadow)"/>
+
+      <!-- stud bodies -->
+      <circle cx="176" cy="176" r="62" fill="url(#studTop)"/>
+      <circle cx="336" cy="176" r="62" fill="url(#studTop)"/>
+      <circle cx="176" cy="336" r="62" fill="url(#studTop)"/>
+      <circle cx="336" cy="336" r="62" fill="url(#studTop)"/>
+
+      <!-- stud rim (slight dark edge for definition at small sizes) -->
+      <circle cx="176" cy="176" r="62" fill="none" stroke="#7a0006" stroke-opacity="0.45" stroke-width="2"/>
+      <circle cx="336" cy="176" r="62" fill="none" stroke="#7a0006" stroke-opacity="0.45" stroke-width="2"/>
+      <circle cx="176" cy="336" r="62" fill="none" stroke="#7a0006" stroke-opacity="0.45" stroke-width="2"/>
+      <circle cx="336" cy="336" r="62" fill="none" stroke="#7a0006" stroke-opacity="0.45" stroke-width="2"/>
+
+      <!-- tiny specular highlights -->
+      <ellipse cx="158" cy="156" rx="14" ry="9" fill="#fff" opacity="0.55"/>
+      <ellipse cx="318" cy="156" rx="14" ry="9" fill="#fff" opacity="0.55"/>
+      <ellipse cx="158" cy="316" rx="14" ry="9" fill="#fff" opacity="0.55"/>
+      <ellipse cx="318" cy="316" rx="14" ry="9" fill="#fff" opacity="0.55"/>
+    </g>
+  </g>
+</svg>

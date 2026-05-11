@@ -25,6 +25,7 @@ export const wishlistFields = {
   theme: { notion: 'Theme', type: 'rich_text' },
   year: { notion: 'Year', type: 'number' },
   pieceCount: { notion: 'Piece Count', type: 'number' },
+  imageUrl: { notion: 'Image URL', type: 'url' },
 };
 
 export const inventorySetsFields = {

@@ -47,6 +47,7 @@ No authentication. `/admin` is obscurity-protected — personal tool.
 | Theme | Text | Auto-filled by Rebrickable |
 | Year | Number | Auto-filled by Rebrickable |
 | Piece Count | Number | Auto-filled by Rebrickable (sets only) |
+| Image URL | URL | Optional LEGO.com CDN URL (from bulk import); falls back to BrickLink construction when null |
 
 ### DB 2: `inventory_sets`
 
