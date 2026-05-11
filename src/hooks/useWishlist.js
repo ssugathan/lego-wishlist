@@ -14,7 +14,9 @@ import { wishlist } from '../lib/notion.js';
 // Mutations (updateRank, markPurchased, remove, create, update) optimistically
 // patch local state and roll back on error so the UI feels instant.
 
-const PAGE_SIZE = 20;
+// Notion's max page size. Matches useInventory so tab-count badges show the
+// true total on first paint instead of "items loaded so far".
+const PAGE_SIZE = 100;
 
 export function useWishlist({ tier = null, status = 'Wishlist' } = {}) {
   const [items, setItems] = useState([]);

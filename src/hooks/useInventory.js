@@ -8,7 +8,9 @@ import { inventorySets, inventoryMinifigs } from '../lib/notion.js';
 // SPEC.md ("Sort is always by ... Date Added descending (inventory)"). Mutations
 // are optimistic with rollback.
 
-const PAGE_SIZE = 20;
+// Notion's max page size. Sized to fit a kid's whole collection in one
+// fetch so the tab-count badge reflects the true total on first paint.
+const PAGE_SIZE = 100;
 
 const SOURCES = {
   sets: inventorySets,

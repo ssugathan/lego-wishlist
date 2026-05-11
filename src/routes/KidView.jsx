@@ -26,7 +26,7 @@ import DetailModal from '../kid/DetailModal.jsx';
 import { shade } from '../kid/util.jsx';
 
 const ACCENT = '#006cb7'; // LEGO blue — per design v2
-const KID_NAME = 'Leo';
+const KID_NAME = 'Caylor';
 
 export default function KidView() {
   const [tab, setTab] = useState('monthly');
