@@ -57,6 +57,7 @@ No authentication. `/admin` is obscurity-protected — personal tool.
 | Theme | Text | Auto-filled |
 | Year | Number | Auto-filled |
 | Piece Count | Number | Auto-filled |
+| Image URL | URL | Optional LEGO.com CDN URL (from bulk import); falls back to BrickLink construction when null |
 | Condition | Select | Complete / Incomplete |
 | Date Added | Date | |
 

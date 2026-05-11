@@ -70,7 +70,7 @@ function Row({ kind, item, remove }) {
       <Td>{id}</Td>
       <Td>
         <img
-          src={bricklinkImageUrl(isSets ? 'Set' : 'Minifig', id)}
+          src={item.imageUrl || bricklinkImageUrl(isSets ? 'Set' : 'Minifig', id)}
           onError={onImageError}
           alt=""
           className="w-12 h-12 object-contain"

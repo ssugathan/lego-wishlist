@@ -36,7 +36,7 @@ function loadEnv() {
 }
 
 const env = loadEnv();
-const NOTION_TOKEN = env.VITE_NOTION_API_KEY;
+const NOTION_TOKEN = env.NOTION_API_KEY;
 const REBRICKABLE_KEY = env.VITE_REBRICKABLE_API_KEY;
 const DB_WISHLIST = env.VITE_NOTION_WISHLIST_DB_ID;
 const DB_SETS = env.VITE_NOTION_INVENTORY_SETS_DB_ID;

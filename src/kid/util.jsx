@@ -145,7 +145,11 @@ export function SetImage({ set, type, variant = 'card' }) {
   const color = colorForSet(set);
   const seed = seedForSet(set);
 
-  if (!id || errored) {
+  // inventory_sets rows carry a LEGO.com CDN imageUrl from the bulk import;
+  // prefer it over the BrickLink-constructed URL when present.
+  const src = set.imageUrl || (id ? bricklinkImageUrl(resolvedType, id) : null);
+
+  if (!src || errored) {
     return variant === 'hero'
       ? <SetPlaceholderLarge color={color} seed={seed} />
       : <SetPlaceholder color={color} seed={seed} />;
@@ -161,7 +165,7 @@ export function SetImage({ set, type, variant = 'card' }) {
       display: 'flex', alignItems: 'center', justifyContent: 'center',
     }}>
       <img
-        src={bricklinkImageUrl(resolvedType, id)}
+        src={src}
         alt={set.name || ''}
         onError={() => setErrored(true)}
         style={{ width: '100%', height: '100%', objectFit: 'contain' }}

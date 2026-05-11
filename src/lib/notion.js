@@ -1,6 +1,8 @@
+// All Notion calls go through /api/notion/* — handled by api/notion/[...path].js
+// in production (Vercel) and by the dev proxy in vite.config.js locally. Both
+// inject Authorization + Notion-Version server-side, so the API key never
+// reaches the browser.
 const API_BASE = '/api/notion';
-const NOTION_VERSION = '2022-06-28';
-const API_KEY = import.meta.env.VITE_NOTION_API_KEY;
 
 export const DB_IDS = {
   wishlist: import.meta.env.VITE_NOTION_WISHLIST_DB_ID,
@@ -31,6 +33,7 @@ export const inventorySetsFields = {
   theme: { notion: 'Theme', type: 'rich_text' },
   year: { notion: 'Year', type: 'number' },
   pieceCount: { notion: 'Piece Count', type: 'number' },
+  imageUrl: { notion: 'Image URL', type: 'url' },
   condition: { notion: 'Condition', type: 'select' },
   dateAdded: { notion: 'Date Added', type: 'date' },
 };
@@ -108,8 +111,6 @@ async function notionFetch(path, options = {}) {
   const res = await fetch(`${API_BASE}${path}`, {
     ...options,
     headers: {
-      Authorization: `Bearer ${API_KEY}`,
-      'Notion-Version': NOTION_VERSION,
       'Content-Type': 'application/json',
       ...(options.headers || {}),
     },
