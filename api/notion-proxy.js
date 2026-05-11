@@ -2,8 +2,13 @@
 // injecting the Notion auth header server-side. The browser never sees the
 // API key.
 //
-// The dev counterpart lives in vite.config.js (the dev proxy does the same
-// header injection so local and prod behave identically).
+// Routing: vercel.json rewrites /api/notion/:path* → /api/notion-proxy?path=:path*.
+// We use a plain (non-catch-all) filename + explicit rewrite because Vercel's
+// auto-detection of [...path].js catch-all routes was unreliable on this
+// Vite project (404 on every subpath).
+//
+// The dev counterpart lives in vite.config.js (the dev proxy injects the
+// same header so local and prod behave identically).
 
 export default async function handler(req, res) {
   const apiKey = process.env.NOTION_API_KEY;
@@ -11,8 +16,11 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'NOTION_API_KEY not configured' });
   }
 
-  const parts = req.query.path;
-  const path = Array.isArray(parts) ? parts.join('/') : parts || '';
+  // `path` is captured by the vercel.json rewrite. With :path* it may arrive
+  // as either a single string ("v1/databases/X/query") or an array of
+  // segments — handle both.
+  const raw = req.query.path;
+  const path = Array.isArray(raw) ? raw.join('/') : (raw || '');
   const url = `https://api.notion.com/${path}`;
 
   const init = {
