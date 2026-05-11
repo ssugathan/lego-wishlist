@@ -161,7 +161,9 @@ export function SetImage({ set, type, variant = 'card' }) {
       aspectRatio: variant === 'hero' ? '4 / 3' : '1 / 1',
       borderRadius: variant === 'hero' ? 24 : 18,
       overflow: 'hidden',
-      background: `radial-gradient(circle at 30% 25%, ${color}55, ${color}22 60%, #0a0a0a 100%)`,
+      // White matches the product shot's own background on lego.com so
+      // transparent PNG margins don't bleed into a dark wrapper.
+      background: '#fff',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
     }}>
       <img
